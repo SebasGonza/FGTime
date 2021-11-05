@@ -1,18 +1,20 @@
 <template>
   <div class="search-user-view">
     <navbar />
-    <h2 class="title">Consultar colaboradores</h2>
+    <h2 class="title">Consultar Usuarios</h2>
   <div class="table-responsive">
     <table class="table" id="tabla">
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Apellido</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">Apellidos</th>
           <th scope="col">Cargo</th>
-          <th scope="col">Especialidad</th>
+          <th scope="col">Email</th>
+          <th scope="col">Direccion</th>
           <th scope="col">Documento</th>
           <th scope="col">Acción</th>
+
         </tr>
       </thead>
       <tbody>

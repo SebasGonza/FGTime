@@ -1,8 +1,10 @@
 <template>
   <div class="create-user-view">
     <navbar />
-    <h2 class="title">Crear colaboradores</h2>
+    <h2 class="title">Crear Usuarios</h2>
     <form id="formulario" class="row g-3" @submit.prevent="agregarRegistro">
+      
+      <!--Nombres-->
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Nombres</label>
         <input
@@ -10,9 +12,11 @@
           type="text"
           class="form-control"
           id="inputEmail4"
-          placeholder="Ej: Juan Esteban"
+          placeholder="Juan Esteban"
         />
       </div>
+
+      <!--Apellidos-->
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Apellidos</label>
         <input
@@ -20,29 +24,59 @@
           type="text"
           class="form-control"
           id="inputEmail4"
-          placeholder="Ej: Franco Estacio"
+          placeholder="Franco Estacio"
         />
       </div>
-      <div class="col-5">
+
+      <!--Cargo-->
+      <div class="col-6">
         <label for="inputAddress" class="form-label">Cargo</label>
         <input
           v-model="cargo"
           type="text"
           class="form-control"
           id="inputAddress"
-          placeholder="Ej: Admin"
+          placeholder=" Administrador"
         />
       </div>
-      <div class="col-7">
-        <label for="inputAddress" class="form-label">Especialidad</label>
+
+      <!--Email-->
+      <div class="col-6">
+        <label for="inputAddress" class="form-label">Email</label>
         <input
-          v-model="especialidad"
+          v-model="email"
           type="text"
           class="form-control"
           id="inputAddress"
-          placeholder="Ej: Sistemas"
+          placeholder="juanito@gmail.com"
         />
       </div>
+
+      <!--Direccion-->
+      <div class="col-6">
+        <label for="inputAddress" class="form-label">Direccion</label>
+        <input
+          v-model="email"
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          placeholder="cll13 #03-33"
+        />
+      </div>
+
+      <!--Barrio-->
+      <div class="col-6">
+        <label for="inputAddress" class="form-label">Barrio</label>
+        <input
+          v-model="email"
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          placeholder="San Juan"
+        />
+      </div>
+
+      <!--Tipo De Documento-->
       <div class="col-md-2">
         <label for="inputState" class="form-label">Tipo de documento</label>
         <select v-model="tipoDocumento" id="inputState" class="form-select">
@@ -50,6 +84,8 @@
           <option>T.I</option>
         </select>
       </div>
+
+      <!--# de Documento-->
       <div class="col-10">
         <label for="inputAddress" class="form-label">Número de documento</label>
         <input
@@ -60,6 +96,8 @@
           placeholder="Ej: 102020202"
         />
       </div>
+      
+      <!--Botón-->
       <div class="col-10">
         <button type="submit" class="btn btn-primary">Crear</button>
       </div>
@@ -79,7 +117,7 @@ export default {
       nombre: null,
       apellido: null,
       cargo: null,
-      especialidad: null,
+      email: null,
       tipoDocumento: null,
       numeroDocumento: null,
       showMessage:false
@@ -91,7 +129,7 @@ export default {
         nombre: this.nombre,
         apellido: this.apellido,
         cargo: this.cargo,
-        especialidad: this.especialidad,
+        email: this.email,
         tipo_documento: this.tipoDocumento,
         documento_identificacion: this.numeroDocumento,
       };
