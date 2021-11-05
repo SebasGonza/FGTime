@@ -45,7 +45,7 @@
         <label for="inputAddress" class="form-label">Email</label>
         <input
           v-model="email"
-          type="text"
+          type="email"
           class="form-control"
           id="inputAddress"
           placeholder="juanito@gmail.com"
@@ -56,7 +56,7 @@
       <div class="col-6">
         <label for="inputAddress" class="form-label">Direccion</label>
         <input
-          v-model="email"
+          v-model="direccion"
           type="text"
           class="form-control"
           id="inputAddress"
@@ -68,7 +68,7 @@
       <div class="col-6">
         <label for="inputAddress" class="form-label">Barrio</label>
         <input
-          v-model="email"
+          v-model="barrio"
           type="text"
           class="form-control"
           id="inputAddress"
@@ -77,7 +77,7 @@
       </div>
 
       <!--Tipo De Documento-->
-      <div class="col-md-2">
+      <div class="col-md-6">
         <label for="inputState" class="form-label">Tipo de documento</label>
         <select v-model="tipoDocumento" id="inputState" class="form-select">
           <option selected>C.C</option>
@@ -86,7 +86,7 @@
       </div>
 
       <!--# de Documento-->
-      <div class="col-10">
+      <div class="col-6">
         <label for="inputAddress" class="form-label">Número de documento</label>
         <input
           v-model="numeroDocumento"
@@ -120,6 +120,8 @@ export default {
       email: null,
       tipoDocumento: null,
       numeroDocumento: null,
+      direccion: null,
+      barrio: null,
       showMessage:false
     };
   },
@@ -130,6 +132,8 @@ export default {
         apellido: this.apellido,
         cargo: this.cargo,
         email: this.email,
+        direccion: this.direccion,
+        barrio: this.barrio,
         tipo_documento: this.tipoDocumento,
         documento_identificacion: this.numeroDocumento,
       };
@@ -142,4 +146,8 @@ export default {
 </script>
 
 <style>
+#formulario{
+  margin: 50px;
+  margin-top: 0%;
+}
 </style>
