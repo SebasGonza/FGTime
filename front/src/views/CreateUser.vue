@@ -6,32 +6,32 @@
       
       <!--Nombres-->
       <div class="col-md-4">
-        <label for="inputEmail4" class="form-label">Nombres</label>
+        <label for="inputNombre" class="form-label">Nombres</label>
         <input
           v-model="nombre"
           type="text"
           class="form-control"
-          id="inputEmail4"
+          id="inputNombre"
           placeholder="Ej: Juan Esteban"
         />
       </div>
 
       <!--Apellidos-->
       <div class="col-md-4">
-        <label for="inputEmail4" class="form-label">Apellidos</label>
+        <label for="inputApellido" class="form-label">Apellidos</label>
         <input
           v-model="apellido"
           type="text"
           class="form-control"
-          id="inputEmail4"
+          id="inputApellido"
           placeholder="Ej: Franco Estacio"
         />
       </div>
 
       <!--Tipo De Documento-->
       <div class="col-md-4">
-        <label for="inputState" class="form-label">Tipo de documento</label>
-        <select v-model="tipoDocumento" id="inputState" class="form-select">
+        <label for="inputTipoDocumento" class="form-label">Tipo de documento</label>
+        <select v-model="tipoDocumento" id="inputTipoDocumento" class="form-select">
           <option selected="true" disabled="disabled">Selecciona tipo de documento</option>
           <option>C.C</option>
           <option>T.I</option>
@@ -40,55 +40,55 @@
 
       <!--# de Documento-->
       <div class="col-4">
-        <label for="inputAddress" class="form-label">Número de documento</label>
+        <label for="inputNumeroDocumento" class="form-label">Número de documento</label>
         <input
           v-model="numeroDocumento"
           type="number"
           class="form-control"
-          id="inputAddress"
+          id="inputNumeroDocumento"
           placeholder="Ej: 102020202"
         />
       </div>
 
       <!--Fecha nacimiento-->
       <div class="col-4">
-        <label for="inputAddress" class="form-label">Fecha de Nacimiento</label>
+        <label for="inputFechaNacimiento" class="form-label">Fecha de Nacimiento</label>
         <input
           v-model="fechaNacimiento"
           type="date"
           class="form-control"
-          id="inputAddress"
+          id="inputFechaNacimiento"
         />
       </div>
 
       <!--Telefono-->
       <div class="col-4">
-        <label for="inputAddress" class="form-label">Telefono</label>
+        <label for="inputTelefono" class="form-label">Telefono</label>
         <input
           v-model="telefono"
-          type="number"
+          type="tel"
           class="form-control"
-          id="inputAddress"
+          id="inputTelefono"
           placeholder="Ej: 9900281"
         />
       </div>
 
       <!--Email-->
       <div class="col-5">
-        <label for="inputAddress" class="form-label">Email</label>
+        <label for="inputEmail" class="form-label">Email</label>
         <input
           v-model="email"
           type="email"
           class="form-control"
-          id="inputAddress"
+          id="inputEmail"
           placeholder="Ej: juanito@gmail.com"
         />
       </div>
 
       <!--Cargo-->
       <div class="col-3">
-        <label for="inputAddress" class="form-label">Cargo</label>
-        <select class="form-select" aria-label="Default select example" v-model="cargo">
+        <label for="inputCargo" class="form-label">Cargo</label>
+        <select class="form-select" id="inputCargo" v-model="cargo">
           <option selected="true" disabled="disabled">Selecciona un cargo</option>
           <option value="1">Administrador</option>
           <option value="2">Operario</option>
@@ -98,12 +98,12 @@
 
       <!--Direccion-->
       <div class="col-4">
-        <label for="inputAddress" class="form-label">Direccion</label>
+        <label for="inputDireccion" class="form-label">Direccion</label>
         <input
           v-model="direccion"
           type="text"
           class="form-control"
-          id="inputAddress"
+          id="inputDireccion"
           placeholder="Ej: cll13 #03-33"
         />
       </div>
@@ -111,7 +111,7 @@
 
       <!--Nombre de Usuario-->
       <div class="col-md-2">
-        <label for="inputEmail4" class="form-label">Nombre De Usuario</label>
+        <label for="inputUsername" class="form-label">Nombre De Usuario</label>
         <input
           v-model="nombreUsuario"
           type="text"
@@ -123,7 +123,7 @@
 
       <!--Contraseña-->
       <div class="col-md-5">
-        <label for="inputEmail4" class="form-label">Contraseña</label>
+        <label for="inputPassword" class="form-label">Contraseña</label>
         <input
           v-model="password"
           type="password"
@@ -135,7 +135,7 @@
 
       <!--Confirmar contraseña-->
       <div class="col-md-5">
-        <label for="inputEmail4" class="form-label">Confirmar contraseña</label>
+        <label for="inputPassword2" class="form-label">Confirmar contraseña</label>
         <input
           v-model="confirmarPassword"
           type="password"
