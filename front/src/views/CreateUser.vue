@@ -4,11 +4,47 @@
     <h2 class="title">Crear Usuarios</h2>
     <form id="formulario" class="row g-3" @submit.prevent="agregarRegistro">
       
+      <!--Nombre de Usuario-->
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">Nombre De Usuario</label>
+        <input
+          v-model="nombreUsuario"
+          type="text"
+          class="form-control"
+          id="inputUsername"
+          placeholder="JuanAk420"
+        />
+      </div>
+
+      <!--Contraseña-->
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">Contraseña</label>
+        <input
+          v-model="contraseña"
+          type="password"
+          class="form-control"
+          id="inputPassword"
+          placeholder="*************"
+        />
+      </div>
+
+      <!--Confirmar contraseña-->
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">Confirmar contraseña</label>
+        <input
+          v-model="confirmarContraseña"
+          type="password"
+          class="form-control"
+          id="inputPassword2"
+          placeholder="***********"
+        />
+      </div>
+
       <!--Nombres-->
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Nombres</label>
         <input
-          v-model="nombre"
+          v-model="nombres"
           type="text"
           class="form-control"
           id="inputEmail4"
@@ -31,13 +67,11 @@
       <!--Cargo-->
       <div class="col-6">
         <label for="inputAddress" class="form-label">Cargo</label>
-        <input
-          v-model="cargo"
-          type="text"
-          class="form-control"
-          id="inputAddress"
-          placeholder=" Administrador"
-        />
+        <select class="form-select" aria-label="Default select example" v-model="cargo">
+          <option selected>Selecciona un cargo</option>
+          <option value="1">Administrador</option>
+          <option value="2">Operario</option>
+      </select>
       </div>
 
       <!--Email-->
@@ -64,15 +98,15 @@
         />
       </div>
 
-      <!--Barrio-->
+      <!--Telefono-->
       <div class="col-6">
-        <label for="inputAddress" class="form-label">Barrio</label>
+        <label for="inputAddress" class="form-label">Telefono</label>
         <input
-          v-model="barrio"
+          v-model="telefono"
           type="text"
           class="form-control"
           id="inputAddress"
-          placeholder="San Juan"
+          placeholder="9900281"
         />
       </div>
 
@@ -114,6 +148,9 @@ export default {
   name: "CreateUser",
   data() {
     return {
+      nombreUsuario: null,
+      contraseña: null,
+      confirmarContraseña: null,
       nombre: null,
       apellido: null,
       cargo: null,
@@ -121,19 +158,22 @@ export default {
       tipoDocumento: null,
       numeroDocumento: null,
       direccion: null,
-      barrio: null,
+      telefono: null,
       showMessage:false
     };
   },
   methods: {
     agregarRegistro() {
       let data = {
+        nombreUsuario: this.nombreUsuario,
+        contraseña: this.contraseña,
+        confirmarContraseña: this.confirmarContraseña,
         nombre: this.nombre,
         apellido: this.apellido,
         cargo: this.cargo,
         email: this.email,
         direccion: this.direccion,
-        barrio: this.barrio,
+        telefono: this.barrio,
         tipo_documento: this.tipoDocumento,
         documento_identificacion: this.numeroDocumento,
       };
