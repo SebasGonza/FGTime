@@ -36,7 +36,6 @@ class User{
     static buscarUsuario();
     static eliminarUsuario();
     static editarUsuario();
-    verificaSesion();
 
 
 }

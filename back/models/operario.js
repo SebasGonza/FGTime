@@ -1,12 +1,12 @@
 const Empleado = require("./empleado");
 
-class Administrador extends Empleado{
+class Operario extends Empleado{
 
     constructor(nombre,apellido,tipoDocumento,numeroDocumento,email,fechaNacimiento,telefono){
         super(nombre,apellido,tipoDocumento,numeroDocumento,email,fechaNacimiento,telefono);
     }
 
-    static crearAdmin();
+    static crearOperario();
 }
 
-module.exports=Administrador;
+module.exports=Operario;
