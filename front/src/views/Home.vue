@@ -1,7 +1,7 @@
 <template>
   <div class="home-view">
     <navbar/>
-    <h1 class="title">Bienvenido Usuario</h1>
+    <h1 class="title">Bienvenido Administrador</h1>
   </div>
 </template>
 

@@ -180,14 +180,23 @@ export default {
     };
   },
   methods: {
+    verificaCampos(){
+      let resultado = false;
+
+      if(!(this.nombre==null||this.apellido==null||this.tipoDocumento==null||this.numeroDocumento==null||this.fechaNacimiento==null||this.telefono==null||this.email==null||this.email==null||this.cargo==null||this.direccion==null||this.nombreUsuario==null||this.password==null||this.confirmarPassword==null)){
+        resultado=true;
+      }
+
+      return resultado;
+    },
+
     verificaPassword(){
       let resultado = false;
 
-      if(!this.password==this.confirmarPassword){
-        alert('No coincide la contraseña');
-      }else{
+      if(this.password==this.confirmarPassword){
         resultado = true;
       }
+
       return resultado;
     },
 
@@ -200,26 +209,33 @@ export default {
     },
 
     agregarRegistro() {
-      if(this.verificaPassword()){
+      if(this.verificaCampos()){
+        console.log(this.verificaCampos());
+        if(this.verificaPassword()){
           this.compruebaRol();
           let data = {
-          nombre_usuario: this.nombreUsuario,
-          password_usuario: this.password,
-          nombre: this.nombre,
-          apellido: this.apellido,
-          tipo_documento: this.tipoDocumento,
-          numero_documento: this.numeroDocumento,
-          telefono: this.telefono,
-          email: this.email,
-          fecha_nacimiento: this.fechaNacimiento,
-          direccion: this.direccion,
-          id_rol: this.cargo,
-          
-        };
-        axios.post(url,data).then((res) => {
-          alert('Se ha creado el usuario con exito!');
-        });
+            nombre_usuario: this.nombreUsuario,
+            password_usuario: this.password,
+            nombre: this.nombre,
+            apellido: this.apellido,
+            tipo_documento: this.tipoDocumento,
+            numero_documento: this.numeroDocumento,
+            telefono: this.telefono,
+            email: this.email,
+            fecha_nacimiento: this.fechaNacimiento,
+            direccion: this.direccion,
+            id_rol: this.cargo,
+          };
+          axios.post(url,data).then((res) => {
+            alert('Se ha creado el usuario con exito!');
+          });
+        }else{
+          alert('No coincide la contraseña');
+        }
+      }else{
+        alert('Campos vacios!');
       }
+      
     },
   },
 };
