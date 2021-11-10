@@ -2,12 +2,12 @@ const express = require('express');
 const morgan = require('morgan');
 require('./database/database');
 
-const UserRoutes = require('./routes/userRouter');
+const AdminRoutes = require('./routes/adminRouter');
 
 const app = express();
 
 //instances to routes
-const usuRouter = new UserRoutes();
+const adminRouter = new AdminRoutes();
 
 
 
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
   });
 
 //Routes
-app.use('/', usuRouter.router);
+app.use('/', adminRouter.router);
 
 //Starting the server
 app.listen(app.get('port'), () => {
