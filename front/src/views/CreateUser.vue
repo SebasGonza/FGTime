@@ -158,7 +158,7 @@
 <script>
 import axios from "axios";
 import Navbar from "../components/Navbar.vue";
-const url = "http://localhost:3000/users";
+const url = "http://localhost:3000/";
 export default {
   components: { Navbar },
   name: "CreateUser",
@@ -175,28 +175,51 @@ export default {
       numeroDocumento: null,
       direccion: null,
       telefono: null,
-      fechaNacimiento: null
+      fechaNacimiento: null,
+      cargo_id: null
     };
   },
   methods: {
+    verificaPassword(){
+      let resultado = false;
+
+      if(!this.password==this.confirmarPassword){
+        alert('No coincide la contraseña');
+      }else{
+        resultado = true;
+      }
+      return resultado;
+    },
+
+    compruebaRol(){
+      if(this.cargo=="Administrador"){
+        this.cargo_id=1;
+      }else{
+        this.cargo_id=2;
+      }
+    },
+
     agregarRegistro() {
-      let data = {
-        nombreUsuario: this.nombreUsuario,
-        password: this.password,
-        confirmarPassword: this.confirmarPassword,
-        cargo: this.cargo,
-        nombre: this.nombre,
-        apellido: this.apellido,
-        email: this.email,
-        direccion: this.direccion,
-        telefono: this.telefono,
-        tipoDocumento: this.tipoDocumento,
-        numeroDocumento: this.numeroDocumento,
-        fechaNacimiento: this.fechaNacimiento
-      };
-      axios.post(url,data).then((res) => {
-        alert('Se ha creado el usuario con exito!');
-      });
+      if(this.verificaPassword()){
+          this.compruebaRol();
+          let data = {
+          nombre_usuario: this.nombreUsuario,
+          password_usuario: this.password,
+          nombre: this.nombre,
+          apellido: this.apellido,
+          tipo_documento: this.tipoDocumento,
+          numero_documento: this.numeroDocumento,
+          telefono: this.telefono,
+          email: this.email,
+          fecha_nacimiento: this.fechaNacimiento,
+          direccion: this.direccion,
+          id_rol: this.cargo,
+          
+        };
+        axios.post(url,data).then((res) => {
+          alert('Se ha creado el usuario con exito!');
+        });
+      }
     },
   },
 };

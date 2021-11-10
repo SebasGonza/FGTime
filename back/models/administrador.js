@@ -3,8 +3,8 @@ const conn = require("../database/database");
 
 class Administrador extends Empleado{
 
-    constructor(nombre,apellido,tipoDocumento,numeroDocumento,email,fechaNacimiento,telefono){
-        super(nombre,apellido,tipoDocumento,numeroDocumento,email,fechaNacimiento,telefono);
+    constructor(nombre,apellido,tipoDocumento,numeroDocumento,email,fechaNacimiento,telefono,direccion){
+        super(nombre,apellido,tipoDocumento,numeroDocumento,email,fechaNacimiento,telefono,direccion);
     }
 
     static crearAdmin(obj){

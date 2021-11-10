@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 //views
 import HomeView from '../views/Home'
 import CreateUser from '../views/CreateUser'
-import SearchUser from '../views/SearchUser'
 
 
 Vue.use(VueRouter)
@@ -13,11 +12,6 @@ const routes = [
     path: '/',
     name: 'HomeView',
     component: HomeView
-  },
-  {
-    path: '/search-user',
-    name: 'SearchUser',
-    component: SearchUser
   },
   {
     path: '/create-user',
