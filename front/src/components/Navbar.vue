@@ -18,7 +18,6 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><router-link to="/create-user" class="dropdown-item">Crear Usuario</router-link></li>
-            <li><router-link to="/search-user" class="dropdown-item">Consultar Usuarios</router-link></li>
           </ul>
         </li>
       </ul>
